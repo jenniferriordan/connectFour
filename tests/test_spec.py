@@ -3,6 +3,8 @@ from src.game import ConnectFour
 
 
 class ConnectFourTest(unittest.TestCase):
+
+    #todo extract file open
     def test_victory_1(self):
 
         file = "board_1"
@@ -17,6 +19,7 @@ class ConnectFourTest(unittest.TestCase):
                     board[rows].append(int(num))
                 else:
                     rows += 1
+
 
         player = [0, 1]
 
