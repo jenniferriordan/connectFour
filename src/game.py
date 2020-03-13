@@ -3,17 +3,17 @@ class ConnectFour:
     def __init__(self):
 
         self.game_matrix = [[0 for x in range(7)] for y in range(6)]
-        self.player_one = 21
-        self.player_two = 21
+        self.player_one_available_turns = 21
+        self.player_two_available_turns = 21
         self.p1_game_piece = 1
         self.p2_game_piece = 2
 
     def player(self, one=None, two=None):
 
         if one:
-            return [self.player_one, self.p1_game_piece]
+            return [self.player_one_available_turns, self.p1_game_piece]
         else:
-            return [self.player_two, self.p2_game_piece]
+            return [self.player_two_available_turns, self.p2_game_piece]
 
     @staticmethod
     def victory(game_board, player):
@@ -57,7 +57,7 @@ class ConnectFour:
                     i = 0
                     rows += 1
 
-    def player_move(self, player, move):
+    def player_turn(self, player=None, move=None):
 
         if player == 1:
             player = ConnectFour.player(self, one=player)
@@ -67,14 +67,16 @@ class ConnectFour:
         game_board = self.game_matrix
 
         i = 0
-        while i < 7:
-            if player[0] > 0:
-                if game_board[i][move - 1] == 0:
-                    game_board[i][move - 1] = player[1]
-                    player[0] = player[0] - 1
-                    break
-                else:
-                    i += 1
+        if player:
+            if move:
+                while i < 7:
+                    if player[0] > 0:
+                        if game_board[i][move - 1] == 0:
+                            game_board[i][move - 1] = player[1]
+                            player[0] = player[0] - 1
+                            break
+                        else:
+                            i += 1
 
         win = ConnectFour.victory(game_board, player)
 

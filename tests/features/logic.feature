@@ -6,10 +6,10 @@ Feature: Game logic
 
   Scenario: Player 1 makes the first move
     Given The board contains only zeros
-    When #Player 1 chooses where to put their game piece
-    Then #the board updates with the number 1 where Player 1 moved
+    #When Player 1 chooses where to put their game piece
+    #Then the board updates with the number 1 where Player 1 moved
 
  # Scenario: Player 2 makes their first move
-    Given #Player 1 has taken their turn
-    When #Player 2 chooses where to put their game piece
-    Then #the board updates to reflect both Player 1 and Player 2 have moved
+    #Given #Player 1 has taken their turn
+    #When #Player 2 chooses where to put their game piece
+    #Then #the board updates to reflect both Player 1 and Player 2 have moved

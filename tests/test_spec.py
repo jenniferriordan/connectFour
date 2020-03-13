@@ -232,6 +232,30 @@ class ConnectFourTest(unittest.TestCase):
 
         self.assertEqual(win, expected_outcome)
 
+    def test_player_turn(self):
+
+        test_player_1 = 1
+        test_player_2 = 2
+
+        game = ConnectFour()
+
+        board = game.player_turn(test_player_1, 1)
+
+        self.assertEqual(board[0][0], test_player_1)
+
+        board = game.player_turn(test_player_2, 1)
+
+        self.assertEqual((board[1][0]), test_player_2)
+
+        board = game.player_turn(test_player_1, 2)
+
+        self.assertEqual(board[0][1], test_player_1)
+
+        board = game.player_turn(test_player_2, 2)
+
+        self.assertEqual((board[1][1]), test_player_2)
+
+
 if __name__ == '__main__':
     unittest.main()
 

@@ -5,7 +5,7 @@ from src.game import ConnectFour
 @given("The board is initialized")
 def step_the_board_is_initialized(context):
 
-    board = ConnectFour.player_move
+    board = ConnectFour().player_turn()
 
     return board
 
@@ -13,11 +13,11 @@ def step_the_board_is_initialized(context):
 @given("The board contains only zeros")
 def step_the_board_contains_only_zeros(context):
 
-    board = step_the_board_is_initialized
+    board = step_the_board_is_initialized(context)
 
     non_zeros = []
-    for _ in board:
-        for num in _:
+    for row in board:
+        for num in row:
             if num != 0:
                 non_zeros.append(num)
 
