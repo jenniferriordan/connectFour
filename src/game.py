@@ -10,7 +10,7 @@ class ConnectFour:
         self.p1_game_piece = 1
         self.p2_game_piece = 2
 
-# todo could have one par with value of 1 or 2
+# todo could have one var with value of 1 or 2
     def player(self, one=None, two=None):
 
         if one:
@@ -88,7 +88,7 @@ class ConnectFour:
         else:
             return game_board
 
-
+# TODO implement UI
 # #while not_game_ended:
 #    # print "player turn "+player
 #     print board;
